@@ -148,7 +148,7 @@ function App() {
     containerDirection: string;
     editorDimension: string;
     previewDimension: string;
-    flexDirection: string;
+    flexDirection: React.CSSProperties["flexDirection"];
   } => {
     // 모바일/태블릿에서는 항상 수직 레이아웃
     if (isMobile || isTablet) {
