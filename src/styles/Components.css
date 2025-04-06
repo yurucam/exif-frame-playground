@@ -152,3 +152,264 @@ button:focus-visible {
 .save-button:hover {
   background-color: #0086f0;
 }
+
+/* 예제 페이지 스타일 */
+.examples-page {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #1e1e1e;
+}
+
+.examples-header {
+  margin-bottom: 20px;
+}
+
+.examples-header h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #e0e0e0;
+}
+
+.examples-header p {
+  color: #a0a0a0;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.search-box {
+  margin: 15px 0;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #3c3c3c;
+  background-color: #252526;
+  color: #d4d4d4;
+  font-size: 14px;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #0078d4;
+}
+
+.category-filter {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.category-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: #252526;
+  border: 1px solid #3c3c3c;
+  color: #a0a0a0;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.category-button:hover {
+  background-color: #2d2d2d;
+  border-color: #4c4c4c;
+}
+
+.category-button.active {
+  background-color: #0078d4;
+  border-color: #0078d4;
+  color: white;
+}
+
+.examples-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.example-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #252526;
+  border: 1px solid #3c3c3c;
+  border-radius: 4px;
+  padding: 15px;
+  transition: all 0.2s;
+}
+
+.example-item:hover {
+  background-color: #2a2a2a;
+  border-color: #4c4c4c;
+}
+
+.example-content {
+  flex: 1;
+}
+
+.example-content h3 {
+  font-size: 16px;
+  margin: 0 0 5px 0;
+  color: #e0e0e0;
+}
+
+.example-description {
+  color: #a0a0a0;
+  font-size: 13px;
+  margin: 0 0 5px 0;
+}
+
+.example-category {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: #333;
+  color: #bbb;
+  font-size: 11px;
+}
+
+.load-example-button {
+  background-color: #2d2d2d;
+  color: #d4d4d4;
+  border: 1px solid #3c3c3c;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 13px;
+  transition: all 0.2s;
+  white-space: nowrap;
+  margin-left: 15px;
+}
+
+.load-example-button:hover {
+  background-color: #0078d4;
+  border-color: #0078d4;
+  color: white;
+}
+
+.no-examples {
+  text-align: center;
+  padding: 40px 0;
+  color: #a0a0a0;
+  font-size: 15px;
+}
+
+/* 토스트 알림 스타일 */
+.toast-container {
+  position: fixed;
+  top: 60px; /* 헤더 아래에 위치 */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+  max-width: 400px;
+  width: 90%;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: toast-fade-in 0.3s ease-out;
+  background-color: #252526;
+  border: 1px solid #3c3c3c;
+  color: #d4d4d4;
+  width: 100%;
+}
+
+.toast-success {
+  border-left: 4px solid #2e7d32;
+}
+
+.toast-error {
+  border-left: 4px solid #d32f2f;
+}
+
+.toast-warning {
+  border-left: 4px solid #ed6c02;
+}
+
+.toast-info {
+  border-left: 4px solid #0288d1;
+}
+
+.toast-icon {
+  margin-right: 12px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toast-success .toast-icon {
+  color: #2e7d32;
+}
+
+.toast-error .toast-icon {
+  color: #d32f2f;
+}
+
+.toast-warning .toast-icon {
+  color: #ed6c02;
+}
+
+.toast-info .toast-icon {
+  color: #0288d1;
+}
+
+.toast-message {
+  flex: 1;
+  font-size: 14px;
+}
+
+.toast-close {
+  background: transparent;
+  border: none;
+  color: #a0a0a0;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  border-radius: 3px;
+}
+
+.toast-close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+@keyframes toast-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toast-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
