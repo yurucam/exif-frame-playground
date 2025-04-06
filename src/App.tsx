@@ -877,7 +877,6 @@ function App() {
           <div className="preview-content">
             <div
               className="svg-display"
-              style={{ backgroundColor: "white" }}
               dangerouslySetInnerHTML={getSvgPreview()}
             />
             {error && <div className="error">{error}</div>}
