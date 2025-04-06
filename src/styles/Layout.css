@@ -1,0 +1,154 @@
+/* Layout.css - 레이아웃 관련 스타일 */
+
+.editor-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  flex-wrap: nowrap;
+  min-height: 0;
+}
+
+.editor-container.horizontal {
+  flex-direction: row;
+}
+
+.editor-container.vertical {
+  flex-direction: column;
+}
+
+.editor-area, .preview-area {
+  overflow: hidden;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* 리사이저 */
+.resizer {
+  flex-shrink: 0;
+  position: relative;
+  background-color: #333333;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.horizontal .resizer {
+  width: 6px;
+  height: 100%;
+  cursor: col-resize;
+}
+
+.vertical .resizer {
+  width: 100%;
+  height: 6px;
+  cursor: row-resize;
+}
+
+.resizer-line {
+  background-color: #555555;
+}
+
+.horizontal .resizer-line {
+  width: 2px;
+  height: 100%;
+}
+
+.vertical .resizer-line {
+  width: 100%;
+  height: 2px;
+}
+
+.resizer:hover {
+  background-color: #444444;
+}
+
+.resizer:hover .resizer-line {
+  background-color: #0078d7;
+}
+
+/* 리사이저 핸들 스타일 */
+.resizer-handle {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3c3c3c;
+  border: 1px solid #555;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  z-index: 20;
+}
+
+.editor-container.horizontal .resizer-handle {
+  width: 18px;
+  height: 36px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.editor-container.vertical .resizer-handle {
+  width: 36px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.resizer:hover .resizer-handle {
+  opacity: 1;
+}
+
+.resizer.resizing .resizer-handle {
+  opacity: 1;
+  background-color: #0078d4;
+}
+
+/* 리사이저 핸들 아이콘 */
+.resizer-handle-icon {
+  position: relative;
+  width: 10px;
+  height: 10px;
+}
+
+.editor-container.horizontal .resizer-handle-icon::before,
+.editor-container.horizontal .resizer-handle-icon::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 10px;
+  background-color: #ddd;
+  left: 3px;
+}
+
+.editor-container.horizontal .resizer-handle-icon::after {
+  left: 7px;
+}
+
+.editor-container.vertical .resizer-handle-icon::before,
+.editor-container.vertical .resizer-handle-icon::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 1px;
+  background-color: #ddd;
+  top: 3px;
+}
+
+.editor-container.vertical .resizer-handle-icon::after {
+  top: 7px;
+}
+
+/* 드래그 중 스타일 */
+.resizer.resizing .resizer-line {
+  background-color: #0078d4;
+}
+
+.horizontal .resizer.resizing .resizer-line {
+  width: 2px;
+}

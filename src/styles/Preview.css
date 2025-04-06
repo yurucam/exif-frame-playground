@@ -1,0 +1,92 @@
+/* Preview.css - 미리보기 영역 관련 스타일 */
+
+.preview-area {
+  overflow: hidden;
+  background-color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+
+.preview-content {
+  display: flex;
+  flex: 1;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* SVG 미리보기 영역에 체크무늬 배경 패턴 */
+.svg-display {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #161616;
+  background-image: 
+    linear-gradient(45deg, #1d1d1d 25%, transparent 25%), 
+    linear-gradient(-45deg, #1d1d1d 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #1d1d1d 75%),
+    linear-gradient(-45deg, transparent 75%, #1d1d1d 75%);
+  background-size: 24px 24px;
+  background-position: 0 0, 0 12px, 12px -12px, -12px 0px;
+  border-radius: 0;
+  padding: 0;
+  overflow: auto;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.svg-display svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.error {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #ff5252;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* 로딩 메시지 스타일 */
+.loading-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  animation: fade-in 0.2s ease-out;
+}
+
+.loading-spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  margin-bottom: 12px;
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}

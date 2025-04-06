@@ -1,0 +1,82 @@
+/* Editor.css - 에디터 관련 스타일 */
+
+/* 코드 에디터 컨테이너 */
+.code-input-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 코드 입력용 textarea */
+.code-textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  resize: none;
+  color: transparent;
+  background: transparent;
+  padding: 15px 10px 15px 50px; /* 줄번호 영역 고려 */
+  font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  tab-size: 2;
+  -moz-tab-size: 2;
+  caret-color: white;
+  z-index: 2;
+  overflow: auto;
+  white-space: pre;
+  letter-spacing: normal;
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: geometricPrecision;
+}
+
+.code-textarea:focus {
+  outline: none;
+}
+
+/* 코드 하이라이팅 영역 */
+.code-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: auto;
+  line-height: 1.5;
+  white-space: pre;
+  letter-spacing: normal;
+}
+
+/* SyntaxHighlighter 내부 pre 요소 스타일 조정 */
+.code-highlight pre {
+  margin: 0 !important;
+  background: transparent !important;
+  font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace !important;
+  line-height: 1.5 !important;
+  font-size: 14px !important;
+  padding: 15px 10px 15px 50px !important;
+  tab-size: 2 !important;
+  -moz-tab-size: 2 !important;
+  white-space: pre !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  width: auto !important;
+  overflow: visible !important;
+  text-rendering: geometricPrecision !important;
+}
+
+.code-highlight code {
+  font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace !important;
+  line-height: 1.5 !important;
+  tab-size: 2 !important;
+  -moz-tab-size: 2 !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+}
