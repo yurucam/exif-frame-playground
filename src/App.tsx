@@ -877,13 +877,14 @@ function App() {
           <div className="preview-content">
             <div
               className="svg-display"
+              style={{ backgroundColor: "#161616" }}
               dangerouslySetInnerHTML={getSvgPreview()}
             />
             {error && <div className="error">{error}</div>}
             {isDebouncing && !error && (
               <div className="loading-message">
                 <div className="loading-spinner"></div>
-                SVG 미리보기 업데이트 중...
+                <div className="loading-text">SVG 미리보기 업데이트 중...</div>
               </div>
             )}
           </div>
