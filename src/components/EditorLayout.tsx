@@ -1,8 +1,9 @@
-import React, { useRef, useEffect, useMemo } from "react";
+import React, { useRef, useEffect, useMemo, useState } from "react";
 import { useLayoutStore } from "../store/layoutStore";
 import { useSettingsStore } from "../store/settingsStore";
 import CodeEditor from "./CodeEditor";
 import SvgPreview from "./SvgPreview";
+import FileManager from "./FileManager";
 
 function EditorLayout() {
   const {
@@ -12,6 +13,9 @@ function EditorLayout() {
     setIsResizing,
     setSplitPosition,
   } = useLayoutStore();
+
+  // FileManager 표시 여부 상태 추가
+  const [showFileManager, setShowFileManager] = useState(false);
 
   // 설정 상태를 명시적으로 구독
   const { settings } = useSettingsStore();
@@ -136,6 +140,11 @@ function EditorLayout() {
     setIsResizing(true);
   };
 
+  // FileManager 토글 함수
+  const toggleFileManager = () => {
+    setShowFileManager(prev => !prev);
+  };
+
   return (
     <div
       className={`editor-container ${containerDirection}`}
@@ -148,7 +157,19 @@ function EditorLayout() {
           [editorDimension]: `${splitPosition}%`,
         }}
       >
-        <CodeEditor isMobile={isMobile} />
+        <div className="editor-wrapper">
+          <CodeEditor isMobile={isMobile} />
+          
+          {/* 파일 관리자 토글 버튼 */}
+          <div className="file-manager-toggle">
+            <button onClick={toggleFileManager}>
+              {showFileManager ? "파일 관리자 닫기 ▲" : "파일 관리자 열기 ▼"}
+            </button>
+          </div>
+          
+          {/* 파일 관리자 컴포넌트 */}
+          {showFileManager && <FileManager />}
+        </div>
       </div>
 
       <div

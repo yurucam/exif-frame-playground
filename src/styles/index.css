@@ -9,6 +9,7 @@
 @import './Editor.css';
 @import './Preview.css';
 @import './Components.css';
+@import './FileManager.css';
 
 /* 반응형 스타일은 항상 마지막에 로드 */
 @import './MediaQueries.css';
